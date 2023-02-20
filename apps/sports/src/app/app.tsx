@@ -1,16 +1,10 @@
-import styled from '@emotion/styled';
-
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { ContentGrid } from '@mui-plus/components';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="sports" />
-    </StyledApp>
+    <div>
+      <ContentGrid />
+    </div>
   );
 }
 

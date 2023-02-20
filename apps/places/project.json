@@ -50,6 +50,7 @@
       "options": {
         "buildTarget": "places:build",
         "hmr": true,
+        "port": 4201,
         "proxyConfig": "apps/places/proxy.conf.json"
       },
       "configurations": {

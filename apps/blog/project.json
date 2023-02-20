@@ -49,7 +49,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "blog:build",
-        "hmr": true
+        "hmr": true,
+        "port": 4204
       },
       "configurations": {
         "development": {

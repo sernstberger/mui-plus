@@ -12,12 +12,11 @@ export const App = () => {
   }, []);
 
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <ContentGrid />
-      </div>
+    <div>
+      <ContentGrid />
+
       <div>{m.message}</div>
-    </>
+    </div>
   );
 };
 
