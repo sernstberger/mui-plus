@@ -5,34 +5,47 @@ import {
   CardContent,
   Grid,
   Typography,
+  Pagination,
 } from '@mui/material';
 
-export interface ContentGridProps { }
+export interface ContentGridItemProps {
+  description?: React.ReactNode;
+  image?: string;
+  title: React.ReactNode;
+}
 
-export function ContentGrid(props: ContentGridProps) {
+export interface ContentGridProps {
+  items: ContentGridItemProps[];
+  pageSize?: number;
+  //       rowsPerPageOptions={[5]}
+}
+
+export function ContentGrid({ items }: ContentGridProps) {
   return (
     <div>
       <Grid container spacing={2}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((foo) => {
+        {items.map((item) => {
           return (
             <Grid item xs={3}>
               <Card>
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image="https://images.unsplash.com/photo-1637308109832-277975333a35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3432&q=80"
-                    alt="green iguana"
-                  />
+                  {item.image && (
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={item.image}
+                      alt="green iguana"
+                    />
+                  )}
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Lizard
+                      {item.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
-                    </Typography>
+                    {item.description && (
+                      <Typography variant="body2" color="text.secondary">
+                        {item.description}
+                      </Typography>
+                    )}
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -40,7 +53,7 @@ export function ContentGrid(props: ContentGridProps) {
           );
         })}
       </Grid>
-      <div>pagination</div>
+      <Pagination count={10} />
     </div>
   );
 }
