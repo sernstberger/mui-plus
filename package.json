@@ -4,6 +4,11 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start:places": "nx run places:serve --port=4200",
+    "start:sports": "nx run sports:serve --port=4201",
+    "start:blog": "nx run blog:serve --port=4202",
+    "start:store": "nx run store:serve --port=4203",
+    "start:all": "yarn nx run-many --target=serve --all=true",
     "build": "nx build",
     "test": "nx test"
   },
