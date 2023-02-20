@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
-    "@emotion/babel-plugin": "11.10.5",
+    "@emotion/babel-plugin": "11.10.6",
     "@nrwl/cli": "15.7.2",
     "@nrwl/cypress": "15.7.2",
     "@nrwl/eslint-plugin-nx": "15.7.2",
