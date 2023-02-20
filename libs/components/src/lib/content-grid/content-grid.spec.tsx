@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Components from './components';
+import ContentGrid from './content-grid';
 
-describe('Components', () => {
+describe('ContentGrid', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Components />);
+    const { baseElement } = render(<ContentGrid />);
     expect(baseElement).toBeTruthy();
   });
 });
