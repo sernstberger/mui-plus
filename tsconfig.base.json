@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mui-plus/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@mui-plus/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@mui-plus/components": ["libs/components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
