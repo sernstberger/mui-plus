@@ -1,6 +1,5 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
 import { Analytics } from '@vercel/analytics/react';
 
 function CustomApp({ Component, pageProps }: AppProps) {
