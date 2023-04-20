@@ -3,7 +3,7 @@ const listings = [
     id: 1,
     title: 'Modern apartment in the city center',
     price: 120,
-    image: '/images/1.jpg',
+    image: 'https://source.unsplash.com/soXSKYRBmmM',
     description:
       'This beautiful apartment is located in the heart of the city and features modern amenities and breathtaking views.',
   },
@@ -11,7 +11,7 @@ const listings = [
     id: 2,
     title: 'Luxury villa with private pool',
     price: 350,
-    image: '/images/2.jpg',
+    image: 'https://source.unsplash.com/l5srEWW2MMc',
     description:
       'Escape to this stunning villa and enjoy your own private oasis with a pool, spa, and lush gardens.',
   },
@@ -19,7 +19,7 @@ const listings = [
     id: 3,
     title: 'Cozy cabin in the woods',
     price: 80,
-    image: '/img/listing3.jpg',
+    image: 'https://source.unsplash.com/MM7nD2FjI3U',
     description:
       'Get away from it all and enjoy the peace and quiet of nature in this charming cabin.',
   },
@@ -27,7 +27,7 @@ const listings = [
     id: 4,
     title: 'Beachfront bungalow with ocean views',
     price: 200,
-    image: '/img/listing4.jpg',
+    image: 'https://source.unsplash.com/3wylDrjxH-E',
     description:
       'Relax and unwind in this beautiful bungalow with panoramic ocean views.',
   },
@@ -35,7 +35,7 @@ const listings = [
     id: 5,
     title: 'Spacious loft in trendy neighborhood',
     price: 150,
-    image: '/img/listing5.jpg',
+    image: 'https://source.unsplash.com/s95oB2n9jng',
     description:
       'Experience the best of city living in this stylish loft with plenty of space and natural light.',
   },
@@ -43,7 +43,7 @@ const listings = [
     id: 6,
     title: 'Rustic farmhouse with mountain views',
     price: 100,
-    image: '/img/listing6.jpg',
+    image: 'https://source.unsplash.com/MP0bgaS_d1c',
     description:
       'Escape to the countryside and enjoy the tranquility of this charming farmhouse.',
   },
@@ -51,7 +51,7 @@ const listings = [
     id: 7,
     title: 'Chic studio in the heart of downtown',
     price: 90,
-    image: '/img/listing7.jpg',
+    image: 'https://source.unsplash.com/4HG3Ca3EzWw',
     description:
       'Live like a local in this modern studio in the heart of the city.',
   },
@@ -59,7 +59,7 @@ const listings = [
     id: 8,
     title: 'Historic townhouse with garden',
     price: 180,
-    image: '/img/listing8.jpg',
+    image: 'https://source.unsplash.com/2cwqJgtQ3D0',
     description:
       'Step back in time and enjoy the elegance and charm of this historic townhouse.',
   },
@@ -67,7 +67,7 @@ const listings = [
     id: 9,
     title: 'Sleek apartment with rooftop terrace',
     price: 250,
-    image: '/img/listing9.jpg',
+    image: 'https://source.unsplash.com/2dnjAACDNd8',
     description:
       'Take in stunning views of the city from this modern apartment with a rooftop terrace.',
   },
@@ -75,7 +75,7 @@ const listings = [
     id: 10,
     title: 'Cottage in the countryside',
     price: 70,
-    image: '/img/listing10.jpg',
+    image: 'https://source.unsplash.com/WCBeEhZb4H0',
     description:
       'Experience the peace and quiet of rural living in this cozy cottage.',
   },
@@ -83,7 +83,7 @@ const listings = [
     id: 11,
     title: 'Penthouse with panoramic views',
     price: 500,
-    image: '/img/listing11.jpg',
+    image: 'https://source.unsplash.com/G7sE2S4Lab4',
     description:
       'Live like royalty in this luxurious penthouse with stunning panoramic views of the city.',
   },
@@ -91,7 +91,7 @@ const listings = [
     id: 12,
     title: 'Secluded beach house with private access',
     price: 300,
-    image: '/img/listing12.jpg',
+    image: 'https://source.unsplash.com/kdwahpWYfQo',
     description:
       'Escape to this secluded beach house and enjoy your own private access to the sand and surf.',
   },
@@ -99,7 +99,7 @@ const listings = [
     id: 13,
     title: 'Stylish apartment with city views',
     price: 200,
-    image: '/img/listing13.jpg',
+    image: 'https://source.unsplash.com/UV81E0oXXWQ',
     description:
       'Enjoy the best of urban living in this chic apartment withstunning city views.',
   },
@@ -107,7 +107,7 @@ const listings = [
     id: 14,
     title: 'Quaint cottage with garden',
     price: 90,
-    image: '/img/listing14.jpg',
+    image: 'https://source.unsplash.com/AQl-J19ocWE',
     description:
       'Relax in the charming garden of this cozy cottage and enjoy the simple life.',
   },
@@ -115,7 +115,7 @@ const listings = [
     id: 15,
     title: 'Elegant townhouse in historic district',
     price: 280,
-    image: '/img/listing15.jpg',
+    image: 'https://source.unsplash.com/_AK42TQRyCw',
     description:
       'Step back in time and enjoy the grandeur of this elegant townhouse in a historic district.',
   },
@@ -123,7 +123,7 @@ const listings = [
     id: 16,
     title: 'Sleek apartment with city skyline views',
     price: 220,
-    image: '/img/listing16.jpg',
+    image: 'https://source.unsplash.com/kfKtt3jJhho',
     description:
       'Experience the excitement of city living in this modern apartment with stunning skyline views.',
   },
@@ -131,7 +131,7 @@ const listings = [
     id: 17,
     title: 'Charming cottage in the countryside',
     price: 120,
-    image: '/img/listing17.jpg',
+    image: 'https://source.unsplash.com/_IAZoJ6X-1A',
     description:
       'Experience the beauty and tranquility of the countryside in this charming cottage.',
   },
@@ -139,7 +139,7 @@ const listings = [
     id: 18,
     title: 'Luxury apartment with river views',
     price: 400,
-    image: '/img/listing18.jpg',
+    image: 'https://source.unsplash.com/sZ5CteK2r6E',
     description:
       'Indulge in luxury and enjoy breathtaking river views from this stunning apartment.',
   },
@@ -147,7 +147,7 @@ const listings = [
     id: 19,
     title: 'Rustic cabin in the woods',
     price: 60,
-    image: '/img/listing19.jpg',
+    image: 'https://source.unsplash.com/AwOG1tC5buE',
     description:
       'Escape from the hustle and bustle of city life and enjoy the peace and quiet of this rustic cabin.',
   },
@@ -155,7 +155,7 @@ const listings = [
     id: 20,
     title: 'Stylish loft with industrial charm',
     price: 180,
-    image: '/img/listing20.jpg',
+    image: 'https://source.unsplash.com/XbwHrt87mQ0',
     description:
       'Experience the best of urban living in this stylish loft with industrial charm and modern amenities.',
   },

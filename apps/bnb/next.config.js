@@ -14,4 +14,14 @@ const nextConfig = {
   },
 };
 
-module.exports = withNx(nextConfig);
+module.exports = {
+  ...withNx(nextConfig),
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+    ],
+  },
+};
