@@ -3,10 +3,36 @@ import {
   Grid,
   Card,
   CardHeader,
-  CardMedia,
   CardContent,
   Typography,
 } from '@mui/material';
+import Image from 'next/image';
+import listings from '../public/data/listings';
+
+interface AspectRatioProps {
+  ratio: number;
+  children: React.ReactNode;
+}
+
+const AspectRatio: React.FC<AspectRatioProps> = ({ ratio, children }) => {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        paddingBottom: `${(1 / ratio) * 100}%`,
+      }}
+    >
+      <div
+        style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// export default AspectRatio;
 
 interface Listing {
   id: number;
@@ -30,12 +56,17 @@ function ListingGrid({ listings }: ListingGridProps) {
               title={listing.title}
               subheader={`$${listing.price} per night`}
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={listing.image}
-              alt={listing.title}
-            />
+
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                src={listing.image}
+                alt={listing.title}
+                fill
+                sizes="(max-width: 640px) 50vw, 640px"
+              // priority
+              />
+            </AspectRatio>
+
             <CardContent>
               <Typography variant="body2" color="text.secondary">
                 {listing.description}
@@ -67,25 +98,7 @@ function ListingGrid({ listings }: ListingGridProps) {
 // }
 
 export default function Index() {
-  const listings = [
-    {
-      id: 1,
-      title: 'Modern apartment in the city center',
-      price: 120,
-      image: '/img/listing1.jpg',
-      description:
-        'This beautiful apartment is located in the heart of the city and features modern amenities and breathtaking views.',
-    },
-    {
-      id: 2,
-      title: 'Luxury villa with private pool',
-      price: 350,
-      image: '/img/listing2.jpg',
-      description:
-        'Escape to this stunning villa and enjoy your own private oasis with a pool, spa, and lush gardens.',
-    },
-    // add more listings here
-  ];
+
 
   return (
     <div className="wrapper">
