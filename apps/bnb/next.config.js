@@ -12,10 +12,6 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-};
-
-module.exports = {
-  ...withNx(nextConfig),
   images: {
     remotePatterns: [
       {
@@ -25,3 +21,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = withNx(nextConfig);
