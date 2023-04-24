@@ -49,7 +49,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "flow:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "apps/flow/proxy.conf.json"
       },
       "configurations": {
         "development": {
