@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import ProgressBar from './components/ProgressBar';
 import Step from './components/Step';
+import { Email, Input, Select } from '@mui-plus/form';
 
 export function App() {
   return (
@@ -27,7 +28,39 @@ export function App() {
             </div>
           }
         />
-        <Route path="step-1" element={<Step />} />
+        <Route
+          path="step-1"
+          element={
+            <Step>
+              <Input fieldName="firstName" label="First name" />
+              <Input fieldName="lastName" label="Last name" />
+            </Step>
+          }
+        />
+        <Route
+          path="step-2"
+          element={
+            <Step>
+              <Select
+                fieldName="iceCream"
+                label="Ice Cream"
+                options={[
+                  { label: 'Chocolate', value: 'chocolate' },
+                  { label: 'Vanilla', value: 'vanilla' },
+                  { label: 'Strawberry', value: 'strawberry' },
+                ]}
+              />
+            </Step>
+          }
+        />
+        <Route
+          path="step-3"
+          element={
+            <Step>
+              <Email fieldName="email" label="Email" />
+            </Step>
+          }
+        />
       </Route>
       <Route path="*" element={<div>nope</div>} />
     </Routes>
