@@ -1,29 +1,23 @@
 import {
   Address,
-  // Autocomplete,
   Checkbox,
-  CheckboxGroup,
-  // Date,
   Email,
   Form,
   Input,
   Select,
 } from '@mui-plus/form';
-import { Container, LinearProgress, Typography } from '@mui/material';
+import { Container } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import type { RootState } from '../app/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment } from './Step/stepSlice';
-import { useEffect, useState } from 'react';
+import { decrement, increment } from './components/Step/stepSlice';
+import ProgressBar from './components/ProgressBar';
 
 export function App() {
   const count = useSelector((state: RootState) => state.step.value);
-  const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    setProgress(count * 10);
-  }, [count])
+
 
   return (
     <Routes>
@@ -32,11 +26,7 @@ export function App() {
         path="/form"
         element={
           <Container maxWidth="sm">
-            <LinearProgress variant="determinate" value={progress} />
-            <br />
-            <Typography variant="body2" color="text.secondary">{`${Math.round(
-              progress
-            )}%`}</Typography>
+            <ProgressBar />
             <br />
 
             <Form onSubmit={() => { }}>
@@ -52,47 +42,10 @@ export function App() {
                 ]}
               />
               <Address fieldName="address" />
-              {/* <Autocomplete
-                fieldName="movie"
-                label="Favorite movie"
-                options={[
-                  {
-                    label: 'Star Wars',
-                    value: 'star-wars',
-                  },
-                  {
-                    label: 'Star Trek',
-                    value: 'star-trek',
-                  },
-                  {
-                    label: 'Super Troopers',
-                    value: 'super-troopers',
-                  },
-                ]}
-              /> */}
               <Checkbox
                 fieldName="terms"
                 label="I agree to the terms and conditions"
               />
-              {/* <CheckboxGroup
-                fieldName="colors"
-                label="Favorite colors"
-                options={[
-                  {
-                    label: 'Red',
-                    value: 'red',
-                  },
-                  {
-                    label: 'Green',
-                    value: 'green',
-                  },
-                  {
-                    label: 'Blue',
-                    value: 'blue',
-                  },
-                ]}
-              /> */}
-              {/* <Date fieldName="birthday" label="Birthday" /> */}
               <Email fieldName="email" label="Email" />
 
               <button

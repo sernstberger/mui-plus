@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import stepReducer from './Step/stepSlice';
+import stepReducer from './components/Step/stepSlice';
 
 export const store = configureStore({
   reducer: {
