@@ -4,10 +4,17 @@ import ProgressBar from './components/ProgressBar';
 import Step from './components/Step';
 import { Email, Input, Select } from '@mui-plus/form';
 
-const steps = [
+interface StepProps {
+  label: string;
+  element: JSX.Element;
+  previousStep?: string;
+  nextStep?: string;
+  path?: string;
+}
+
+const steps: StepProps[] = [
   {
     label: 'What is your name?',
-    path: 'step-1',
     element: (
       <>
         <Input fieldName="firstName" label="First name" />
@@ -18,7 +25,6 @@ const steps = [
   },
   {
     label: 'Contact info',
-    path: 'step-2',
     element: (
       <>
         <Email fieldName="email" label="Email" />
@@ -28,7 +34,6 @@ const steps = [
   },
   {
     label: 'The most important question of all',
-    path: 'step-3',
     element: (
       <Select
         fieldName="iceCream"
@@ -72,12 +77,13 @@ export function App() {
         {steps.map((step, index) => {
           const { path, element, previousStep, nextStep, label } = step;
           const stepNumber = index + 1;
+          const _path = path || `step-${stepNumber}`;
           const _previousStep = previousStep || `/form/step-${stepNumber - 1}`;
           const _nextStep = nextStep || `/form/step-${stepNumber + 1}`;
           return (
             <Route
-              key={path}
-              path={path}
+              key={_path}
+              path={_path}
               element={
                 <Step
                   previousStep={_previousStep}
