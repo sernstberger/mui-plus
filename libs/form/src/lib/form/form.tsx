@@ -6,9 +6,10 @@ import { DevTool } from '@hookform/devtools';
 export interface FormProps {
   children: React.ReactNode;
   onSubmit: (data: any) => void;
+  submitText?: string;
 }
 
-export function Form({ children, onSubmit }: FormProps) {
+export function Form({ children, onSubmit, submitText = 'Submit' }: FormProps) {
   const methods = useForm();
 
   return (
@@ -24,7 +25,7 @@ export function Form({ children, onSubmit }: FormProps) {
           {children}
 
           <Button variant="contained" type="submit">
-            Submit
+            {submitText}
           </Button>
         </Stack>
       </form>

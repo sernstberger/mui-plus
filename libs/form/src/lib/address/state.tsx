@@ -1,10 +1,10 @@
 import Select from '../select/select';
 
-export const State = ({ fieldName = 'state' }: any) => {
+export const State = ({ fieldName = 'state', required }: any) => {
   return (
     <Select
       fieldName={fieldName}
-      required
+      required={required}
       label="State"
       // defaultValue={'IN'}
       options={[

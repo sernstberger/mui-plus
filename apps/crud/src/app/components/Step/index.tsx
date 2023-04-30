@@ -1,6 +1,5 @@
 import { Address, Checkbox, Email, Form, Input, Select } from '@mui-plus/form';
-import { Container } from '@mui/material';
-import { Route } from 'react-router-dom';
+import { Button, Container } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { decrement, increment } from './stepSlice';
@@ -10,9 +9,9 @@ export function Step() {
   const dispatch = useDispatch();
 
   return (
-
     <Container maxWidth="sm">
-      <Form onSubmit={() => { }}>
+      <Button onClick={() => dispatch(decrement())}>Back</Button>
+      <Form onSubmit={() => dispatch(increment())}>
         <Input fieldName="firstName" label="First name" />
         <Input fieldName="lastName" label="Last name" />
         <Select
@@ -31,22 +30,11 @@ export function Step() {
         />
         <Email fieldName="email" label="Email" />
 
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          Decrement
-        </button>
+        {/* <Button variant="contained" onClick={}>
+          Next
+        </Button> */}
       </Form>
     </Container>
-
   );
 }
 
