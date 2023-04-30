@@ -1,8 +1,9 @@
-import { Container, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import ProgressBar from './components/ProgressBar';
 import Step from './components/Step';
-import { Email, Input, Select } from '@mui-plus/form';
+import { Email, Form, Input, Select } from '@mui-plus/form';
+import React from 'react';
 
 interface StepProps {
   label: string;
@@ -70,10 +71,29 @@ export function App() {
           element={
             <div>
               <Typography>Let's get started</Typography>
-              <Link to="step-1">Step 1</Link>
+              <Button component={Link} to="all">All-in-one</Button>
+              <Button component={Link} to="step-1">Wizard</Button>
             </div>
           }
         />
+
+        {/* All-in-one form */}
+        <Route
+          path="all"
+          element={
+            <Form onSubmit={() => { }}>
+              {steps.map((step, index) => {
+                return (
+                  <React.Fragment key={step.label}>
+                    {step.element}
+                  </React.Fragment>
+                );
+              })}
+            </Form>
+          }
+        />
+
+        {/* Wizard routes */}
         {steps.map((step, index) => {
           const { path, element, previousStep, nextStep, label } = step;
           const stepNumber = index + 1;
