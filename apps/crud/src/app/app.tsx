@@ -31,7 +31,7 @@ export function App() {
         <Route
           path="step-1"
           element={
-            <Step>
+            <Step previousStep="/form" nextStep="/form/step-2">
               <Input fieldName="firstName" label="First name" />
               <Input fieldName="lastName" label="Last name" />
             </Step>
@@ -40,7 +40,7 @@ export function App() {
         <Route
           path="step-2"
           element={
-            <Step>
+            <Step previousStep="/form/step-1" nextStep="/form/step-3" >
               <Select
                 fieldName="iceCream"
                 label="Ice Cream"
@@ -56,7 +56,7 @@ export function App() {
         <Route
           path="step-3"
           element={
-            <Step>
+            <Step previousStep="/form/step-2" nextStep="/form/submitted">
               <Email fieldName="email" label="Email" />
             </Step>
           }
