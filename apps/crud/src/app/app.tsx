@@ -11,8 +11,14 @@ import {
 } from '@mui-plus/form';
 import { Container } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
+import type { RootState } from '../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from './Step/stepSlice';
 
 export function App() {
+  const count = useSelector((state: RootState) => state.step.value);
+  const dispatch = useDispatch();
+
   return (
     <Routes>
       <Route index element={<h1>Home</h1>} />
@@ -75,6 +81,20 @@ export function App() {
               />
               {/* <Date fieldName="birthday" label="Birthday" /> */}
               <Email fieldName="email" label="Email" />
+
+              <button
+                aria-label="Increment value"
+                onClick={() => dispatch(increment())}
+              >
+                Increment
+              </button>
+              <span>{count}</span>
+              <button
+                aria-label="Decrement value"
+                onClick={() => dispatch(decrement())}
+              >
+                Decrement
+              </button>
             </Form>
           </Container>
         }

@@ -12,6 +12,7 @@
     "@mui/material": "^5.12.1",
     "@mui/x-date-pickers": "^6.3.0",
     "@nrwl/next": "15.9.2",
+    "@reduxjs/toolkit": "^1.9.5",
     "@vercel/analytics": "^0.1.11",
     "card-validator": "^8.1.1",
     "date-fns": "^2.30.0",
@@ -20,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "react-number-format": "^5.1.4",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.0",
     "tslib": "^2.3.0",
     "yup": "^1.1.1"
