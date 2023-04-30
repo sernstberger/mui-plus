@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import stepReducer from './components/Step/stepSlice';
+import dataReducer from './dataSlice';
 
 export const store = configureStore({
   reducer: {
     step: stepReducer,
+    data: dataReducer,
   },
 });
 

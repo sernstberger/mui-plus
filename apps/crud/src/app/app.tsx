@@ -29,22 +29,25 @@ const steps: StepProps[] = [
     element: (
       <>
         <Email fieldName="email" label="Email" />
-        <Input fieldName="phone" label="Phone" />
+        <Input fieldName="phone" label="Phone" type='tel' />
       </>
     ),
   },
   {
     label: 'The most important question of all',
     element: (
-      <Select
-        fieldName="iceCream"
-        label="Ice Cream"
-        options={[
-          { label: 'Chocolate', value: 'chocolate' },
-          { label: 'Vanilla', value: 'vanilla' },
-          { label: 'Strawberry', value: 'strawberry' },
-        ]}
-      />
+      <>
+        <Select
+          fieldName="iceCream"
+          label="Ice Cream"
+          options={[
+            { label: 'Chocolate', value: 'chocolate' },
+            { label: 'Vanilla', value: 'vanilla' },
+            { label: 'Strawberry', value: 'strawberry' },
+          ]}
+        />
+        <Input fieldName="freeForm" label="Freeform" />
+      </>
     ),
     nextStep: '/form/submitted',
   },
