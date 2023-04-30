@@ -79,7 +79,12 @@ export function App() {
               key={path}
               path={path}
               element={
-                <Step previousStep={_previousStep} nextStep={_nextStep} label={label}>
+                <Step
+                  previousStep={_previousStep}
+                  nextStep={_nextStep}
+                  label={label}
+                  stepNumber={stepNumber}
+                >
                   {element}
                 </Step>
               }

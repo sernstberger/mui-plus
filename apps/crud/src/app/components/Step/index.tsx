@@ -1,18 +1,28 @@
 import { Form } from '@mui-plus/form';
 import { Button, Container, Typography } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { decrement, increment } from './stepSlice';
+import { setCurrentStep } from './stepSlice';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export function Step({ children, nextStep, previousStep, label }: any) {
+export function Step({
+  children,
+  nextStep,
+  previousStep,
+  label,
+  stepNumber,
+}: any) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(setCurrentStep(stepNumber));
+  }, [dispatch, stepNumber]);
 
   return (
     <Container maxWidth="sm">
       <Button
         onClick={() => {
-          dispatch(decrement());
           navigate(previousStep);
         }}
       >
@@ -21,7 +31,6 @@ export function Step({ children, nextStep, previousStep, label }: any) {
       <Typography variant="h4">{label}</Typography>
       <Form
         onSubmit={() => {
-          dispatch(increment());
           navigate(nextStep);
         }}
       >
