@@ -2,7 +2,6 @@ export * from './lib/address/address';
 export * from './lib/autocomplete/autocomplete';
 export * from './lib/checkbox/checkbox';
 export * from './lib/checkbox-group/checkbox-group';
-export * from './lib/credit-card/credit-card';
 export * from './lib/date/date';
 export * from './lib/email/email';
 export * from './lib/form/form';

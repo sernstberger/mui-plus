@@ -6,23 +6,23 @@ import Input from '../input/input';
 export const Address = ({ fieldName }: any) => {
   return (
     <Grid container spacing={2}>
-      <Grid xs={12}>
+      <Grid item xs={12}>
         <Input fieldName={`${fieldName}-streetAddress`} required label="Street address" />
       </Grid>
-      <Grid xs={12}>
+      <Grid item xs={12}>
         <Input
           fieldName={`${fieldName}-line2`}
           // required
           label="Apt, suite, unit, building, floor, etc."
         />
       </Grid>
-      <Grid xs={6}>
+      <Grid item xs={6}>
         <Input fieldName={`${fieldName}-city`} required label="City" />
       </Grid>
-      <Grid xs={3}>
+      <Grid item xs={3}>
         <State fieldName={`${fieldName}-state`} />
       </Grid>
-      <Grid xs={3}>
+      <Grid item xs={3}>
         <ZipCode fieldName={`${fieldName}-zip`} required label="Zip code" />
       </Grid>
     </Grid>
