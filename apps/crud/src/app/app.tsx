@@ -1,23 +1,29 @@
 import {
   Address,
-  Autocomplete,
+  // Autocomplete,
   Checkbox,
   CheckboxGroup,
-  Date,
+  // Date,
   Email,
   Form,
   Input,
   Select,
 } from '@mui-plus/form';
-import { Container } from '@mui/material';
+import { Container, LinearProgress, Typography } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import type { RootState } from '../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from './Step/stepSlice';
+import { useEffect, useState } from 'react';
 
 export function App() {
   const count = useSelector((state: RootState) => state.step.value);
+  const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setProgress(count * 10);
+  }, [count])
 
   return (
     <Routes>
@@ -26,6 +32,13 @@ export function App() {
         path="/form"
         element={
           <Container maxWidth="sm">
+            <LinearProgress variant="determinate" value={progress} />
+            <br />
+            <Typography variant="body2" color="text.secondary">{`${Math.round(
+              progress
+            )}%`}</Typography>
+            <br />
+
             <Form onSubmit={() => { }}>
               <Input fieldName="firstName" label="First name" />
               <Input fieldName="lastName" label="Last name" />
@@ -39,7 +52,7 @@ export function App() {
                 ]}
               />
               <Address fieldName="address" />
-              <Autocomplete
+              {/* <Autocomplete
                 fieldName="movie"
                 label="Favorite movie"
                 options={[
@@ -56,12 +69,12 @@ export function App() {
                     value: 'super-troopers',
                   },
                 ]}
-              />
+              /> */}
               <Checkbox
                 fieldName="terms"
                 label="I agree to the terms and conditions"
               />
-              <CheckboxGroup
+              {/* <CheckboxGroup
                 fieldName="colors"
                 label="Favorite colors"
                 options={[
@@ -78,7 +91,7 @@ export function App() {
                     value: 'blue',
                   },
                 ]}
-              />
+              /> */}
               {/* <Date fieldName="birthday" label="Birthday" /> */}
               <Email fieldName="email" label="Email" />
 
