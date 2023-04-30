@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Input from '../input/input';
 import CreditCardExpirationDate from './credit-card-expiration-date';
 import CreditCardNumber from './credit-card-number';

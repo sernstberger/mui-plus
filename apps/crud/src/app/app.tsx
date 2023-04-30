@@ -1,4 +1,14 @@
-import { Form, Input, Select } from '@mui-plus/form';
+import {
+  Address,
+  Autocomplete,
+  Checkbox,
+  CheckboxGroup,
+  Date,
+  Email,
+  Form,
+  Input,
+  Select,
+} from '@mui-plus/form';
 import { Container } from '@mui/material';
 
 export function App() {
@@ -16,6 +26,49 @@ export function App() {
             { label: 'Strawberry', value: 'strawberry' },
           ]}
         />
+        <Address fieldName="address" />
+        <Autocomplete
+          fieldName="movie"
+          label="Favorite movie"
+          options={[
+            {
+              label: 'Star Wars',
+              value: 'star-wars',
+            },
+            {
+              label: 'Star Trek',
+              value: 'star-trek',
+            },
+            {
+              label: 'Starship Troopers',
+              value: 'starship-troopers',
+            },
+          ]}
+        />
+        <Checkbox
+          fieldName="terms"
+          label="I agree to the terms and conditions"
+        />
+        <CheckboxGroup
+          fieldName="colors"
+          label="Favorite colors"
+          options={[
+            {
+              label: 'Red',
+              value: 'red',
+            },
+            {
+              label: 'Green',
+              value: 'green',
+            },
+            {
+              label: 'Blue',
+              value: 'blue',
+            },
+          ]}
+        />
+        {/* <Date fieldName="birthday" label="Birthday" /> */}
+        <Email fieldName="email" label="Email" />
       </Form>
     </Container>
   );
