@@ -1,4 +1,4 @@
-import { Select } from '@mui-form/components';
+import Select from '../select/select';
 
 export const State = ({ fieldName = 'state' }: any) => {
   return (
