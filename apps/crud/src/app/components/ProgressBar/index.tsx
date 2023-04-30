@@ -8,7 +8,7 @@ export function ProgressBar({ numberOfSteps }: any) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    setProgress((currentStep / numberOfSteps) * 100);
+    setProgress(((currentStep - 1) / numberOfSteps) * 100);
   }, [currentStep, numberOfSteps]);
 
   return (
