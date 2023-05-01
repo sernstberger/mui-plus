@@ -6,7 +6,14 @@ export interface DataState {
 }
 
 const initialState: DataState = {
-  data: {},
+  data: {
+    firstName: 'Steve',
+    lastName: 'Jobs',
+    email: 'asflkj@lkjadf.com',
+    phone: '1234567890',
+    iceCream: 'chocolate',
+    freeForm: 'This is a free form text area',
+  },
 };
 
 export const dataSlice = createSlice({
