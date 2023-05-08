@@ -15,7 +15,6 @@ export function Input(props: InputProps) {
         fieldState,
         formState,
         label,
-        defaultValue,
         helperText,
         required,
         disabled,
@@ -24,7 +23,7 @@ export function Input(props: InputProps) {
           <TextField
             {...field}
             error={!!fieldState.error}
-            {...{ disabled, required, helperText, label, defaultValue }}
+            {...{ disabled, required, helperText, label }}
           />
         );
       }}

@@ -55,7 +55,6 @@ export function Control({
           fieldState,
           formState,
           label,
-          defaultValue, // can I take this out? shouldn't this be in the value (in field)?
           required,
           helperText: fieldState.error ? fieldState.error.message : helperText,
           disabled: disabled || formState.isSubmitting,

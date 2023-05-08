@@ -4,6 +4,8 @@ import ProgressBar from './components/ProgressBar';
 import Step from './components/Step';
 import { Email, Form, Input, Select } from '@mui-plus/form';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
 interface StepProps {
   label: string;
@@ -13,47 +15,51 @@ interface StepProps {
   path?: string;
 }
 
-const steps: StepProps[] = [
-  {
-    label: 'What is your name?',
-    element: (
-      <>
-        <Input fieldName="firstName" label="First name" />
-        <Input fieldName="lastName" label="Last name" />
-      </>
-    ),
-    previousStep: '/form',
-  },
-  {
-    label: 'Contact info',
-    element: (
-      <>
-        <Email fieldName="email" label="Email" />
-        <Input fieldName="phone" label="Phone" type='tel' />
-      </>
-    ),
-  },
-  {
-    label: 'The most important question of all',
-    element: (
-      <>
-        <Select
-          fieldName="iceCream"
-          label="Ice Cream"
-          options={[
-            { label: 'Chocolate', value: 'chocolate' },
-            { label: 'Vanilla', value: 'vanilla' },
-            { label: 'Strawberry', value: 'strawberry' },
-          ]}
-        />
-        <Input fieldName="freeForm" label="Freeform" />
-      </>
-    ),
-    nextStep: '/form/submitted',
-  },
-];
+
 
 export function App() {
+  const data = useSelector((state: RootState) => state.data.data);
+  const steps: StepProps[] = [
+    {
+      label: 'What is your name?',
+      element: (
+        <>
+          <Input fieldName="firstName" label="First name" defaultValue={data.firstName} />
+          <Input fieldName="lastName" label="Last name" defaultValue={data.lastName} />
+        </>
+      ),
+      previousStep: '/form',
+    },
+    {
+      label: 'Contact info',
+      element: (
+        <>
+          <Email fieldName="email" label="Email" defaultValue={data.email} />
+          <Input fieldName="phone" label="Phone" type='tel' defaultValue={data.phone} />
+          {/* <input defaultValue={data.phone} /> */}
+        </>
+      ),
+    },
+    {
+      label: 'The most important question of all',
+      element: (
+        <>
+          <Select
+            fieldName="iceCream"
+            label="Ice Cream"
+            options={[
+              { label: 'Chocolate', value: 'chocolate' },
+              { label: 'Vanilla', value: 'vanilla' },
+              { label: 'Strawberry', value: 'strawberry' },
+            ]}
+          />
+          <Input fieldName="freeForm" label="Freeform" />
+        </>
+      ),
+      nextStep: '/form/submitted',
+    },
+  ];
+
   const numberOfSteps = steps.length;
   return (
     <Routes>

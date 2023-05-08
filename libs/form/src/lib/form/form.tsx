@@ -10,7 +10,16 @@ export interface FormProps {
 }
 
 export function Form({ children, onSubmit, submitText = 'Submit' }: FormProps) {
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      firstName: 'bill',
+      lastName: 'luo',
+      phone: '1234567890',
+      email: 'woot@lkjadf.com',
+      iceCream: 'vanilla',
+      freeForm: 'test',
+    },
+  });
 
   return (
     <FormProvider {...methods}>
