@@ -61,9 +61,6 @@ export function App() {
 
   async function handleUserInput(input: string, category: keyof InjuryReport) {
     const gptResponse = (await callGPTAPI(input)) as any;
-    // Process the gptResponse and extract the relevant information
-    // ...
-    // console.log('!!!', gptResponse.choices[0].message.content);
 
     setInjuryReport(gptResponse.choices[0].message.content);
 
@@ -76,8 +73,6 @@ export function App() {
     // }));
   }
 
-  // convert the text to a js object
-  console.log('!!!', injuryReport, typeof injuryReport, JSON.parse(injuryReport));
   const injuryReportObj = JSON.parse(injuryReport);
 
   return (
@@ -98,7 +93,6 @@ export function App() {
           <input type="text" readOnly value={injuryReportObj.phone} />
         </>
       }
-      {/* {injuryReport} */}
     </div>
   );
 }
